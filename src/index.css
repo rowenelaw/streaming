@@ -3,11 +3,11 @@
 @theme {
   --font-display: "Outfit", system-ui, sans-serif;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
-  --color-viu-gold: #FDBE11;
-  --color-viu-gold-hover: #FFD043;
-  --color-viu-canvas: #111113;
-  --color-viu-surface: #1A1A1E;
-  --color-viu-elevated: #232329;
+  --color-uwatch-gold: #FDBE11;
+  --color-uwatch-gold-hover: #FFD043;
+  --color-uwatch-canvas: #111113;
+  --color-uwatch-surface: #1A1A1E;
+  --color-uwatch-elevated: #232329;
 }
 
 @layer base {
@@ -32,7 +32,7 @@
   scrollbar-width: none;
 }
 
-@keyframes viu-flash {
+@keyframes uwatch-flash {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
@@ -45,11 +45,11 @@
   }
 }
 
-.animate-viu-flash {
-  animation: viu-flash 0.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.animate-uwatch-flash {
+  animation: uwatch-flash 0.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@keyframes viu-banner-sheen {
+@keyframes uwatch-banner-sheen {
   0% {
     transform: translateX(-120%) skewX(-18deg);
   }
@@ -58,7 +58,7 @@
   }
 }
 
-@keyframes viu-banner-glow {
+@keyframes uwatch-banner-glow {
   0%, 100% {
     box-shadow: 0 0 0 1px rgba(253, 190, 17, 0.35), 0 6px 20px -4px rgba(253, 190, 17, 0.22);
   }
@@ -67,7 +67,7 @@
   }
 }
 
-@keyframes viu-banner-enter {
+@keyframes uwatch-banner-enter {
   0% {
     opacity: 0;
     transform: translateY(-14px);
@@ -78,16 +78,16 @@
   }
 }
 
-.animate-viu-banner-sheen {
-  animation: viu-banner-sheen 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+.animate-uwatch-banner-sheen {
+  animation: uwatch-banner-sheen 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.animate-viu-banner-glow {
-  animation: viu-banner-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-    viu-banner-glow 2.4s ease-in-out infinite;
+.animate-uwatch-banner-glow {
+  animation: uwatch-banner-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    uwatch-banner-glow 2.4s ease-in-out infinite;
 }
 
-@keyframes viu-adfree-flash {
+@keyframes uwatch-adfree-flash {
   0%, 100% {
     opacity: 1;
     color: #F04E00;
@@ -102,8 +102,8 @@
   }
 }
 
-.animate-viu-adfree-flash {
-  animation: viu-adfree-flash 0.85s ease-in-out infinite;
+.animate-uwatch-adfree-flash {
+  animation: uwatch-adfree-flash 0.85s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

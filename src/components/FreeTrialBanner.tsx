@@ -7,7 +7,7 @@ interface FreeTrialBannerProps {
 }
 
 const ONE_HOUR_SECONDS = 3600;
-const STORAGE_KEY = 'viu_sg_trial_deadline';
+const STORAGE_KEY = 'uwatch_sg_trial_deadline';
 
 function getInitialRemainingSeconds(): number {
   try {
@@ -52,17 +52,17 @@ export function FreeTrialBanner({
       aria-label="Free trial promotion"
       className="mx-auto max-w-[1440px] px-4 pt-4 pb-2 sm:px-8"
     >
-      <div className="animate-viu-banner-glow relative overflow-hidden rounded-xl bg-[#FFF3C4] px-6 py-4 sm:px-8 sm:py-5">
+      <div className="animate-uwatch-banner-glow relative overflow-hidden rounded-xl bg-[#FFF3C4] px-6 py-4 sm:px-8 sm:py-5">
         {/* Continuous GPU-composited golden sheen sweep */}
         <div
           aria-hidden="true"
-          className="animate-viu-banner-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent"
+          className="animate-uwatch-banner-sheen pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent"
         />
 
         <div className="relative z-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
           <h2 className="font-display text-lg sm:text-2xl lg:text-[21px] xl:text-[26px] font-extrabold tracking-tight text-[#1F2126] leading-tight lg:whitespace-nowrap">
             Sign up for FREE trial on your first{' '}
-            <span className="animate-viu-adfree-flash inline-block text-[#F04E00]">
+            <span className="animate-uwatch-adfree-flash inline-block text-[#F04E00]">
               AD-FREE
             </span>{' '}
             series NOW.
@@ -89,7 +89,7 @@ export function FreeTrialBanner({
               className="ml-auto sm:ml-0 inline-flex items-center gap-2 rounded-lg bg-[#111113] px-6 py-3 font-display text-base sm:text-lg font-extrabold tracking-tight text-[#FDBE11] shadow-md transition-colors duration-150 hover:bg-[#232329] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111113]"
             >
               <Crown className="h-5 w-5 text-[#FDBE11]" aria-hidden="true" />
-              <span>{isPremiumMember ? 'Viu Premium' : 'Go Premium'}</span>
+              <span>{isPremiumMember ? 'UWatch Premium' : 'Go Premium'}</span>
             </button>
           </div>
         </div>

@@ -255,7 +255,7 @@ export function ContentRail({
                             : 'bg-[#111113]/85 text-[#FDBE11] border border-[#FDBE11]/40'
                         }`}
                       >
-                        {show.isOriginal ? 'Viu Original' : 'Premium'}
+                        {show.isOriginal ? 'UWatch Original' : 'Premium'}
                       </span>
                     )}
 

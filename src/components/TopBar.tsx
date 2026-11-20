@@ -1,3 +1,5 @@
+import { UWatchLogo } from './UWatchLogo';
+
 export type NavTab = 'Home' | 'K-Dramas' | 'Variety' | 'C-Dramas' | 'My List';
 
 interface TopBarProps {
@@ -20,16 +22,14 @@ export function TopBar({
   return (
     <header className="sticky top-0 z-40 border-b border-white/[0.08] bg-[#111113]/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-8 px-4 sm:px-8">
-        {/* Zone 1: Single-element Viu brand wordmark */}
+        {/* Zone 1: Single-element UWatch brand wordmark */}
         <button
           type="button"
           onClick={() => onSelectNav('Home')}
-          aria-label="Viu Singapore Home"
-          className="flex items-center whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FDBE11] cursor-pointer"
+          aria-label="UWatch Home"
+          className="flex items-center whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF5E00] cursor-pointer"
         >
-          <span className="font-display text-3xl font-extrabold tracking-tight text-[#FDBE11] leading-none">
-            viu
-          </span>
+          <UWatchLogo size="md" />
         </button>
 
         {/* Zone 2: 5 concise single-line navigation links */}
@@ -75,7 +75,7 @@ export function TopBar({
                 : 'bg-[#FDBE11] text-[#111113] hover:bg-[#FFD043]'
             }`}
           >
-            {isPremiumMember ? 'Viu Premium' : 'Go Premium'}
+            {isPremiumMember ? 'UWatch Premium' : 'Go Premium'}
           </button>
         </div>
       </div>

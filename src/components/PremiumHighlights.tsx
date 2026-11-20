@@ -39,7 +39,7 @@ const PREMIUM_FEATURES = [
   {
     index: '06',
     title: 'Full Catalog & TV Casting',
-    description: 'Unlock every Viu Original, Premium-only series, and big-screen TV casting.',
+    description: 'Unlock every UWatch Original, Premium-only series, and big-screen TV casting.',
     icon: Cast,
   },
 ];
@@ -56,13 +56,13 @@ export function PremiumHighlights({
       <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs sm:text-sm font-semibold text-[#FDBE11]">
-            Viu Premium Membership
+            UWatch Premium Membership
           </p>
           <h2
             id="premium-unlocks-heading"
             className="mt-1 font-display text-2xl sm:text-3xl font-bold tracking-tight text-white [text-wrap:balance]"
           >
-            What Paid Viu Premium Plans Unlock
+            What Paid UWatch Premium Plans Unlock
           </h2>
           <p className="mt-2 text-sm text-[#A1A1AA]">
             From uninterrupted Full HD playback to early simulcasts and TV casting, upgrade any
@@ -75,7 +75,7 @@ export function PremiumHighlights({
           onClick={onOpenPremium}
           className="inline-flex items-center gap-2 self-start rounded-md bg-[#FDBE11] px-5 py-2.5 text-sm font-bold text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer md:self-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
         >
-          <span>{isPremiumMember ? 'Manage Viu Premium' : 'Compare Paid Plans'}</span>
+          <span>{isPremiumMember ? 'Manage UWatch Premium' : 'Compare Paid Plans'}</span>
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>

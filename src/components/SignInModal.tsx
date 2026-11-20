@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { LogIn, X } from 'lucide-react';
+import { UWatchLogo } from './UWatchLogo';
 
 interface SignInModalProps {
   isOpen: boolean;
@@ -71,9 +72,7 @@ export function SignInModal({
           <X className="h-4 w-4" aria-hidden="true" />
         </button>
 
-        <span className="font-display text-2xl font-extrabold tracking-tight text-[#FDBE11]">
-          viu
-        </span>
+        <UWatchLogo size="sm" />
 
         {signedInEmail ? (
           <div className="mt-4">
@@ -114,24 +113,24 @@ export function SignInModal({
             >
               {mode === 'signup'
                 ? 'Start your ad-free drama trial'
-                : 'Sign in to Viu Singapore'}
+                : 'Sign in to UWatch Singapore'}
             </h2>
             <p className="mt-1 text-sm text-[#A1A1AA]">
               {mode === 'signup'
-                ? 'Create your Viu account to unlock your first ad-free drama in Full HD.'
+                ? 'Create your UWatch account to unlock your first ad-free drama in Full HD.'
                 : 'Sync your watchlist, watch history, and subtitles across devices.'}
             </p>
 
             <div className="mt-5 space-y-4">
               <div>
                 <label
-                  htmlFor="viu-signin-email"
+                  htmlFor="uwatch-signin-email"
                   className="block text-xs font-semibold text-[#D4D4D8] mb-1.5"
                 >
                   Email address
                 </label>
                 <input
-                  id="viu-signin-email"
+                  id="uwatch-signin-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -143,13 +142,13 @@ export function SignInModal({
 
               <div>
                 <label
-                  htmlFor="viu-signin-password"
+                  htmlFor="uwatch-signin-password"
                   className="block text-xs font-semibold text-[#D4D4D8] mb-1.5"
                 >
                   Password
                 </label>
                 <input
-                  id="viu-signin-password"
+                  id="uwatch-signin-password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

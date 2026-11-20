@@ -81,7 +81,7 @@ export function HeroCarousel({
         <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col justify-end px-4 pb-12 sm:px-8 sm:pb-14">
           <div className="max-w-2xl">
             <p className="mb-2 text-xs sm:text-sm font-semibold tracking-wide text-[#FDBE11]">
-              {current.isOriginal ? 'Viu Original' : current.category}
+              {current.isOriginal ? 'UWatch Original' : current.category}
               {current.simulcastNote ? ` · ${current.simulcastNote}` : ''}
             </p>
 
@@ -107,7 +107,7 @@ export function HeroCarousel({
               <button
                 type="button"
                 onClick={onSignInClick}
-                className="animate-viu-flash inline-flex items-center gap-2 rounded-md bg-[#FDBE11] px-6 py-3 text-sm sm:text-base font-extrabold tracking-wide text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                className="animate-uwatch-flash inline-flex items-center gap-2 rounded-md bg-[#FDBE11] px-6 py-3 text-sm sm:text-base font-extrabold tracking-wide text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
               >
                 <LogIn className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
                 <span>{signedInEmail ? 'Signed In' : 'Sign In to Watch'}</span>

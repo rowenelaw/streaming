@@ -40,13 +40,13 @@ export function PremiumModal({
     e.preventDefault();
     const trimmed = promoCode.trim().toUpperCase();
     if (!trimmed) {
-      setPromoMessage('Enter a valid promo code such as VIUSG30.');
+      setPromoMessage('Enter a valid promo code such as UWATCH30.');
       return;
     }
-    if (trimmed === 'VIUSG30' || trimmed === 'VIU2026') {
+    if (trimmed === 'UWATCH30' || trimmed === 'UWATCH2026') {
       setPromoMessage('Promo applied: First 30 days included at S$0.00.');
     } else {
-      setPromoMessage('Code not recognized. Try VIUSG30 for a 30-day preview.');
+      setPromoMessage('Code not recognized. Try UWATCH30 for a 30-day preview.');
     }
   };
 
@@ -65,7 +65,7 @@ export function PremiumModal({
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close Viu Premium dialog"
+          aria-label="Close UWatch Premium dialog"
           className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white hover:bg-[#232329] cursor-pointer"
         >
           <X className="h-4 w-4" aria-hidden="true" />
@@ -73,17 +73,17 @@ export function PremiumModal({
 
         <div className="flex items-center gap-2 text-[#FDBE11]">
           <Crown className="h-5 w-5" aria-hidden="true" />
-          <span className="text-xs font-bold uppercase tracking-wider">Viu Singapore</span>
+          <span className="text-xs font-bold uppercase tracking-wider">UWatch Singapore</span>
         </div>
 
         <h2
           id="premium-modal-title"
           className="mt-2 font-display text-2xl sm:text-3xl font-bold text-white"
         >
-          Upgrade to Viu Premium
+          Upgrade to UWatch Premium
         </h2>
         <p className="mt-1.5 text-sm text-[#A1A1AA]">
-          Watch the newest K-dramas, Viu Originals, and variety episodes without interruptions.
+          Watch the newest K-dramas, UWatch Originals, and variety episodes without interruptions.
         </p>
 
         {/* Segmented Billing Switch */}
@@ -143,8 +143,8 @@ export function PremiumModal({
             type="text"
             value={promoCode}
             onChange={(e) => setPromoCode(e.target.value)}
-            placeholder="Redeem promo code (try VIUSG30)"
-            aria-label="Redeem Viu promo code"
+            placeholder="Redeem promo code (try UWATCH30)"
+            aria-label="Redeem UWatch promo code"
             className="flex-1 rounded-md border border-white/10 bg-[#111113] px-3 py-2 text-sm text-white placeholder-[#71717A] focus:border-[#FDBE11] focus:outline-none"
           />
           <button

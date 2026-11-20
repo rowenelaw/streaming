@@ -141,7 +141,7 @@ export const SHOW_CATALOG: Show[] = [
     isOriginal: true,
     isPremium: true,
     topRank: 2,
-    simulcastNote: 'Viu Original · 8h Simulcast',
+    simulcastNote: 'UWatch Original · 8h Simulcast',
     posterUrl: IMAGES.posterMystery,
     backdropUrl: IMAGES.heroJoseonCrown,
     cast: ['Ju Ji-hoon', 'Han Hyo-joo', 'Heo Joon-ho'],

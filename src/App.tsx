@@ -150,7 +150,7 @@ export default function App() {
     []
   );
 
-  const viuOriginals = useMemo(
+  const uwatchOriginals = useMemo(
     () => SHOW_CATALOG.filter((s) => s.isOriginal),
     []
   );
@@ -251,7 +251,7 @@ export default function App() {
                 </p>
                 <p className="mt-1.5 text-sm text-[#A1A1AA]">
                   {activeNav === 'My List'
-                    ? 'Bookmark dramas or variety shows anywhere in Viu to pick them up here.'
+                    ? 'Bookmark dramas or variety shows anywhere in UWatch to pick them up here.'
                     : 'Try clearing your search query or switching back to all regions.'}
                 </p>
                 <button
@@ -313,10 +313,10 @@ export default function App() {
             />
 
             <ContentRail
-              id="viu-originals"
-              title="Viu Originals"
+              id="uwatch-originals"
+              title="UWatch Originals"
               subtitle="Exclusive productions crafted for Asian audiences"
-              shows={viuOriginals}
+              shows={uwatchOriginals}
               variant="poster"
               myListIds={myListIds}
               progressMap={progressMap}

@@ -71,7 +71,7 @@ export function ShowDetailModal({
 
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
             <p className="text-xs font-semibold text-[#FDBE11]">
-              {show.isOriginal ? 'Viu Original' : show.category}
+              {show.isOriginal ? 'UWatch Original' : show.category}
               {show.simulcastNote ? ` · ${show.simulcastNote}` : ''}
             </p>
             <h2
@@ -157,7 +157,7 @@ export function ShowDetailModal({
                   onClick={onOpenPremium}
                   className="text-xs font-semibold text-[#FDBE11] hover:text-[#FFD043] cursor-pointer"
                 >
-                  Unlock all with Viu Premium
+                  Unlock all with UWatch Premium
                 </button>
               )}
             </div>
