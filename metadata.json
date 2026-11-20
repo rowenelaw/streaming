@@ -1,0 +1,6 @@
+{
+  "name": "Viu Singapore — Asian Dramas, Variety & Anime",
+  "description": "Stream Viu Originals, K-dramas, Korean variety shows, Chinese dramas, Thai series, and anime in HD with English and Chinese subtitles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
