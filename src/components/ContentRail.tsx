@@ -86,7 +86,7 @@ export function ContentRail({
             <button
               type="button"
               onClick={() => setIsExpanded((prev) => !prev)}
-              className="px-2.5 py-1.5 text-xs font-semibold text-[#FDBE11] hover:text-[#FFD043] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+              className="px-2.5 py-1.5 text-xs font-semibold text-[#FF5E00] hover:text-[#FF7A26] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               {isExpanded ? 'Show shelf' : 'View all'}
             </button>
@@ -127,7 +127,7 @@ export function ContentRail({
                     onClick={() =>
                       onPlayShow(show, progress?.episodeNumber ?? latestEp?.number ?? 1)
                     }
-                    className="block h-full w-full text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-[#FDBE11]"
+                    className="block h-full w-full text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-[#FF5E00]"
                     aria-label={`Play ${show.title}`}
                   >
                     <MediaImage
@@ -146,7 +146,7 @@ export function ContentRail({
                         : `Ep ${show.availableEpisodes} · ${latestEp?.duration ?? '60 min'}`}
                     </span>
                     {show.isPremium && (
-                      <span className="absolute top-2.5 right-2.5 rounded bg-[#FDBE11] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#111113]">
+                      <span className="absolute top-2.5 right-2.5 rounded bg-[#FF5E00] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#111113]">
                         Premium
                       </span>
                     )}
@@ -154,7 +154,7 @@ export function ContentRail({
                       aria-hidden="true"
                       className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-150 group-hover:opacity-100"
                     >
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FDBE11] text-[#111113] shadow-lg">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FF5E00] text-[#111113] shadow-lg">
                         <Play className="h-5 w-5 fill-current ml-0.5" />
                       </span>
                     </span>
@@ -163,7 +163,7 @@ export function ContentRail({
                   {progress && (
                     <div className="absolute inset-x-0 bottom-0 h-1 bg-white/20">
                       <div
-                        className="h-full bg-[#FDBE11]"
+                        className="h-full bg-[#FF5E00]"
                         style={{ width: `${Math.min(100, Math.max(8, progress.percent))}%` }}
                       />
                     </div>
@@ -176,7 +176,7 @@ export function ContentRail({
                     onClick={() => onSelectShow(show)}
                     className="text-left cursor-pointer min-w-0"
                   >
-                    <h3 className="text-sm font-semibold text-white group-hover:text-[#FDBE11] transition-colors truncate">
+                    <h3 className="text-sm font-semibold text-white group-hover:text-[#FF5E00] transition-colors truncate">
                       {show.title}
                     </h3>
                     <p className="mt-0.5 text-xs text-[#A1A1AA] truncate">
@@ -193,7 +193,7 @@ export function ContentRail({
                     className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded text-[#A1A1AA] hover:bg-white/10 hover:text-white cursor-pointer"
                   >
                     {isSaved ? (
-                      <Check className="h-4 w-4 text-[#FDBE11]" aria-hidden="true" />
+                      <Check className="h-4 w-4 text-[#FF5E00]" aria-hidden="true" />
                     ) : (
                       <Bookmark className="h-4 w-4" aria-hidden="true" />
                     )}
@@ -222,7 +222,7 @@ export function ContentRail({
                 {variant === 'top10' && (
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute -left-0.5 bottom-1 z-20 font-display text-6xl sm:text-7xl font-extrabold leading-none tracking-tighter text-[#FDBE11] drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] tabular-nums select-none"
+                    className="pointer-events-none absolute -left-0.5 bottom-1 z-20 font-display text-6xl sm:text-7xl font-extrabold leading-none tracking-tighter text-[#FF5E00] drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] tabular-nums select-none"
                   >
                     {rankNumber}
                   </span>
@@ -232,7 +232,7 @@ export function ContentRail({
                   <button
                     type="button"
                     onClick={() => onSelectShow(show)}
-                    className="block h-full w-full text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-[#FDBE11]"
+                    className="block h-full w-full text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-[#FF5E00]"
                     aria-label={`View details for ${show.title}`}
                   >
                     <MediaImage
@@ -251,8 +251,8 @@ export function ContentRail({
                       <span
                         className={`absolute top-2.5 right-2.5 rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                           show.isOriginal
-                            ? 'bg-[#FDBE11] text-[#111113]'
-                            : 'bg-[#111113]/85 text-[#FDBE11] border border-[#FDBE11]/40'
+                            ? 'bg-[#FF5E00] text-[#111113]'
+                            : 'bg-[#111113]/85 text-[#FF5E00] border border-[#FF5E00]/40'
                         }`}
                       >
                         {show.isOriginal ? 'UWatch Original' : 'Premium'}
@@ -273,7 +273,7 @@ export function ContentRail({
                       type="button"
                       onClick={() => onPlayShow(show, 1)}
                       aria-label={`Play ${show.title}`}
-                      className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FDBE11] text-[#111113] shadow-md hover:bg-[#FFD043] cursor-pointer"
+                      className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF5E00] text-[#111113] shadow-md hover:bg-[#FF7A26] cursor-pointer"
                     >
                       <Play className="h-3.5 w-3.5 fill-current ml-0.5" aria-hidden="true" />
                     </button>
@@ -286,7 +286,7 @@ export function ContentRail({
                       className="flex h-8 w-8 items-center justify-center rounded-full bg-[#111113]/85 text-white border border-white/15 hover:bg-[#232329] cursor-pointer"
                     >
                       {isSaved ? (
-                        <Check className="h-3.5 w-3.5 text-[#FDBE11]" aria-hidden="true" />
+                        <Check className="h-3.5 w-3.5 text-[#FF5E00]" aria-hidden="true" />
                       ) : (
                         <Bookmark className="h-3.5 w-3.5" aria-hidden="true" />
                       )}
@@ -302,7 +302,7 @@ export function ContentRail({
                   variant === 'top10' ? 'pl-5 sm:pl-6' : ''
                 }`}
               >
-                <h3 className="text-sm font-semibold text-white group-hover:text-[#FDBE11] transition-colors truncate">
+                <h3 className="text-sm font-semibold text-white group-hover:text-[#FF5E00] transition-colors truncate">
                   {show.title}
                 </h3>
                 <p className="mt-0.5 text-xs text-[#A1A1AA] truncate">

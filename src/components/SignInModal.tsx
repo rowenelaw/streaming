@@ -99,7 +99,7 @@ export function SignInModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-md bg-[#FDBE11] px-5 py-2 text-sm font-bold text-[#111113] hover:bg-[#FFD043] cursor-pointer"
+                className="rounded-md bg-[#FF5E00] px-5 py-2 text-sm font-bold text-[#111113] hover:bg-[#FF7A26] cursor-pointer"
               >
                 Continue Watching
               </button>
@@ -136,7 +136,7 @@ export function SignInModal({
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@example.com"
                   autoFocus
-                  className="w-full rounded-md border border-white/10 bg-[#111113] px-3.5 py-2.5 text-sm text-white placeholder-[#71717A] focus:border-[#FDBE11] focus:outline-none"
+                  className="w-full rounded-md border border-white/10 bg-[#111113] px-3.5 py-2.5 text-sm text-white placeholder-[#71717A] focus:border-[#FF5E00] focus:outline-none"
                 />
               </div>
 
@@ -153,18 +153,18 @@ export function SignInModal({
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="w-full rounded-md border border-white/10 bg-[#111113] px-3.5 py-2.5 text-sm text-white placeholder-[#71717A] focus:border-[#FDBE11] focus:outline-none"
+                  className="w-full rounded-md border border-white/10 bg-[#111113] px-3.5 py-2.5 text-sm text-white placeholder-[#71717A] focus:border-[#FF5E00] focus:outline-none"
                 />
               </div>
             </div>
 
             {error && (
-              <p className="mt-3 text-xs font-medium text-[#FDBE11]">{error}</p>
+              <p className="mt-3 text-xs font-medium text-[#FF5E00]">{error}</p>
             )}
 
             <button
               type="submit"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#FDBE11] px-5 py-2.5 text-sm font-extrabold text-[#111113] hover:bg-[#FFD043] transition-colors cursor-pointer"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#FF5E00] px-5 py-2.5 text-sm font-extrabold text-[#111113] hover:bg-[#FF7A26] transition-colors cursor-pointer"
             >
               <LogIn className="h-4 w-4" aria-hidden="true" />
               <span>{mode === 'signup' ? 'Sign Up & Claim Free Trial' : 'Sign In'}</span>

@@ -28,7 +28,7 @@ export function Footer({ onSelectNav, onOpenPremium }: FooterProps) {
                 <button
                   type="button"
                   onClick={() => onSelectNav('K-Dramas')}
-                  className="hover:text-[#FDBE11] transition-colors cursor-pointer"
+                  className="hover:text-[#FF5E00] transition-colors cursor-pointer"
                 >
                   Korean Dramas
                 </button>
@@ -37,7 +37,7 @@ export function Footer({ onSelectNav, onOpenPremium }: FooterProps) {
                 <button
                   type="button"
                   onClick={() => onSelectNav('Variety')}
-                  className="hover:text-[#FDBE11] transition-colors cursor-pointer"
+                  className="hover:text-[#FF5E00] transition-colors cursor-pointer"
                 >
                   Korean Variety Shows
                 </button>
@@ -46,7 +46,7 @@ export function Footer({ onSelectNav, onOpenPremium }: FooterProps) {
                 <button
                   type="button"
                   onClick={() => onSelectNav('C-Dramas')}
-                  className="hover:text-[#FDBE11] transition-colors cursor-pointer"
+                  className="hover:text-[#FF5E00] transition-colors cursor-pointer"
                 >
                   Chinese Dramas
                 </button>
@@ -55,7 +55,7 @@ export function Footer({ onSelectNav, onOpenPremium }: FooterProps) {
                 <button
                   type="button"
                   onClick={() => onSelectNav('My List')}
-                  className="hover:text-[#FDBE11] transition-colors cursor-pointer"
+                  className="hover:text-[#FF5E00] transition-colors cursor-pointer"
                 >
                   My Watchlist
                 </button>
@@ -72,7 +72,7 @@ export function Footer({ onSelectNav, onOpenPremium }: FooterProps) {
                 <button
                   type="button"
                   onClick={onOpenPremium}
-                  className="hover:text-[#FDBE11] transition-colors cursor-pointer"
+                  className="hover:text-[#FF5E00] transition-colors cursor-pointer"
                 >
                   UWatch Premium Singapore
                 </button>
@@ -81,7 +81,7 @@ export function Footer({ onSelectNav, onOpenPremium }: FooterProps) {
                 <button
                   type="button"
                   onClick={onOpenPremium}
-                  className="hover:text-[#FDBE11] transition-colors cursor-pointer"
+                  className="hover:text-[#FF5E00] transition-colors cursor-pointer"
                 >
                   Redeem Promo Code
                 </button>

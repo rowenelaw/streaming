@@ -3,8 +3,8 @@
 @theme {
   --font-display: "Outfit", system-ui, sans-serif;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
-  --color-uwatch-gold: #FDBE11;
-  --color-uwatch-gold-hover: #FFD043;
+  --color-uwatch-orange: #FF5E00;
+  --color-uwatch-orange-hover: #FF7A26;
   --color-uwatch-canvas: #111113;
   --color-uwatch-surface: #1A1A1E;
   --color-uwatch-elevated: #232329;
@@ -36,12 +36,12 @@
   0%, 100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(253, 190, 17, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 94, 0, 0.7);
   }
   50% {
     opacity: 0.55;
     transform: scale(1.03);
-    box-shadow: 0 0 22px 4px rgba(253, 190, 17, 0.85);
+    box-shadow: 0 0 22px 4px rgba(255, 94, 0, 0.85);
   }
 }
 
@@ -60,10 +60,10 @@
 
 @keyframes uwatch-banner-glow {
   0%, 100% {
-    box-shadow: 0 0 0 1px rgba(253, 190, 17, 0.35), 0 6px 20px -4px rgba(253, 190, 17, 0.22);
+    box-shadow: 0 0 0 1px rgba(255, 94, 0, 0.35), 0 6px 20px -4px rgba(255, 94, 0, 0.22);
   }
   50% {
-    box-shadow: 0 0 0 2px rgba(253, 190, 17, 0.8), 0 10px 28px -2px rgba(253, 190, 17, 0.45);
+    box-shadow: 0 0 0 2px rgba(255, 94, 0, 0.8), 0 10px 28px -2px rgba(255, 94, 0, 0.45);
   }
 }
 

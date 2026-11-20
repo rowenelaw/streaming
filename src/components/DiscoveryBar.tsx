@@ -58,9 +58,9 @@ export function DiscoveryBar({
                 key={option.value}
                 type="button"
                 onClick={() => onRegionChange(option.value)}
-                className={`rounded-md px-3.5 py-2 text-xs sm:text-sm font-medium transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11] ${
+                className={`rounded-md px-3.5 py-2 text-xs sm:text-sm font-medium transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00] ${
                   isActive
-                    ? 'bg-[#FDBE11] text-[#111113] font-semibold'
+                    ? 'bg-[#FF5E00] text-[#111113] font-semibold'
                     : 'bg-[#232329] text-[#D4D4D8] hover:bg-[#2C2C34] hover:text-white'
                 }`}
               >
@@ -83,7 +83,7 @@ export function DiscoveryBar({
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search dramas, cast, variety..."
               aria-label="Search titles, cast, or genres"
-              className="w-full rounded-md border border-white/10 bg-[#111113] py-2 pl-9 pr-8 text-sm text-white placeholder-[#71717A] transition-colors focus:border-[#FDBE11] focus:outline-none"
+              className="w-full rounded-md border border-white/10 bg-[#111113] py-2 pl-9 pr-8 text-sm text-white placeholder-[#71717A] transition-colors focus:border-[#FF5E00] focus:outline-none"
             />
             {searchQuery && (
               <button
@@ -104,7 +104,7 @@ export function DiscoveryBar({
             id="subtitle-filter-select"
             value={subtitleFilter}
             onChange={(e) => onSubtitleChange(e.target.value as SubtitleFilter)}
-            className="rounded-md border border-white/10 bg-[#111113] px-3 py-2 text-sm text-[#E4E4E7] transition-colors focus:border-[#FDBE11] focus:outline-none cursor-pointer"
+            className="rounded-md border border-white/10 bg-[#111113] px-3 py-2 text-sm text-[#E4E4E7] transition-colors focus:border-[#FF5E00] focus:outline-none cursor-pointer"
           >
             {SUBTITLE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value} className="bg-[#1A1A1E] text-white">
@@ -117,7 +117,7 @@ export function DiscoveryBar({
             <button
               type="button"
               onClick={onResetFilters}
-              className="text-xs font-medium text-[#FDBE11] hover:text-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer px-2 py-2"
+              className="text-xs font-medium text-[#FF5E00] hover:text-[#FF7A26] whitespace-nowrap shrink-0 cursor-pointer px-2 py-2"
             >
               Reset ({resultCount})
             </button>

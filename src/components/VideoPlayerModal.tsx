@@ -120,7 +120,7 @@ export function VideoPlayerModal({
       {/* Top Player Bar */}
       <div className="flex items-center justify-between gap-4 border-b border-white/10 bg-[#111113] px-4 py-3 sm:px-6">
         <div className="min-w-0">
-          <p className="text-xs font-medium text-[#FDBE11] truncate">
+          <p className="text-xs font-medium text-[#FF5E00] truncate">
             {show.title} · Episode {episode.number}
           </p>
           <h2 className="font-display text-sm sm:text-base font-bold text-white truncate">
@@ -165,7 +165,7 @@ export function VideoPlayerModal({
               className="absolute inset-0 flex items-center justify-center cursor-pointer focus-visible:outline-none"
             >
               {!isPlaying && (
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FDBE11] text-[#111113] shadow-xl">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FF5E00] text-[#111113] shadow-xl">
                   <Play className="h-7 w-7 fill-current ml-0.5" />
                 </span>
               )}
@@ -195,9 +195,9 @@ export function VideoPlayerModal({
                 value={currentTime}
                 onChange={(e) => handleSeek(Number(e.target.value))}
                 aria-label="Seek video timeline"
-                className="h-1.5 flex-1 cursor-pointer accent-[#FDBE11]"
+                className="h-1.5 flex-1 cursor-pointer accent-[#FF5E00]"
                 style={{
-                  background: `linear-gradient(to right, #FDBE11 ${progressPct}%, #2C2C34 ${progressPct}%)`,
+                  background: `linear-gradient(to right, #FF5E00 ${progressPct}%, #2C2C34 ${progressPct}%)`,
                 }}
               />
               <span className="text-xs font-mono text-[#A1A1AA] tabular-nums w-12 text-right">
@@ -212,7 +212,7 @@ export function VideoPlayerModal({
                   type="button"
                   onClick={() => setIsPlaying((p) => !p)}
                   aria-label={isPlaying ? 'Pause' : 'Play'}
-                  className="flex h-9 w-9 items-center justify-center rounded-md bg-[#FDBE11] text-[#111113] hover:bg-[#FFD043] cursor-pointer"
+                  className="flex h-9 w-9 items-center justify-center rounded-md bg-[#FF5E00] text-[#111113] hover:bg-[#FF7A26] cursor-pointer"
                 >
                   {isPlaying ? (
                     <Pause className="h-4 w-4 fill-current" />
@@ -260,7 +260,7 @@ export function VideoPlayerModal({
                     onChange={(e) =>
                       setSubtitleLang(e.target.value as SubtitleLanguage | 'Off')
                     }
-                    className="rounded-md border border-white/10 bg-[#1A1A1E] px-2.5 py-1.5 text-xs font-medium text-white focus:border-[#FDBE11] focus:outline-none cursor-pointer"
+                    className="rounded-md border border-white/10 bg-[#1A1A1E] px-2.5 py-1.5 text-xs font-medium text-white focus:border-[#FF5E00] focus:outline-none cursor-pointer"
                   >
                     {show.subtitles.map((lang) => (
                       <option key={lang} value={lang}>
@@ -275,7 +275,7 @@ export function VideoPlayerModal({
                   aria-label="Stream video quality"
                   value={quality}
                   onChange={(e) => setQuality(e.target.value as QualityOption)}
-                  className="rounded-md border border-white/10 bg-[#1A1A1E] px-2.5 py-1.5 text-xs font-medium text-white focus:border-[#FDBE11] focus:outline-none cursor-pointer"
+                  className="rounded-md border border-white/10 bg-[#1A1A1E] px-2.5 py-1.5 text-xs font-medium text-white focus:border-[#FF5E00] focus:outline-none cursor-pointer"
                 >
                   <option value="1080p Full HD">1080p Full HD</option>
                   <option value="720p HD">720p HD</option>
@@ -288,7 +288,7 @@ export function VideoPlayerModal({
                     onClick={() =>
                       nextLocked ? onOpenPremium() : onSelectEpisode(nextEpisode)
                     }
-                    className="inline-flex items-center gap-1 rounded-md border border-[#FDBE11]/40 bg-[#1A1A1E] px-3 py-1.5 text-xs font-semibold text-[#FDBE11] hover:bg-[#232329] whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center gap-1 rounded-md border border-[#FF5E00]/40 bg-[#1A1A1E] px-3 py-1.5 text-xs font-semibold text-[#FF5E00] hover:bg-[#232329] whitespace-nowrap cursor-pointer"
                   >
                     {nextLocked && <Lock className="h-3 w-3" aria-hidden="true" />}
                     <span>Next: Ep {nextEpisode.number}</span>
@@ -316,7 +316,7 @@ export function VideoPlayerModal({
                   onClick={() => (locked ? onOpenPremium() : onSelectEpisode(ep))}
                   className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors cursor-pointer ${
                     isCurrent
-                      ? 'bg-[#232329] border border-[#FDBE11]/50'
+                      ? 'bg-[#232329] border border-[#FF5E00]/50'
                       : 'hover:bg-[#1E1E24] border border-transparent'
                   }`}
                 >
@@ -332,12 +332,12 @@ export function VideoPlayerModal({
                     <div className="flex items-center justify-between gap-1">
                       <span
                         className={`text-xs font-semibold truncate ${
-                          isCurrent ? 'text-[#FDBE11]' : 'text-white'
+                          isCurrent ? 'text-[#FF5E00]' : 'text-white'
                         }`}
                       >
                         Ep {ep.number} · {ep.title}
                       </span>
-                      {locked && <Lock className="h-3 w-3 shrink-0 text-[#FDBE11]" />}
+                      {locked && <Lock className="h-3 w-3 shrink-0 text-[#FF5E00]" />}
                     </div>
                     <p className="mt-0.5 text-[11px] text-[#A1A1AA] tabular-nums">
                       {ep.duration}

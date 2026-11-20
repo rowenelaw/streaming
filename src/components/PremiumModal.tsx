@@ -71,7 +71,7 @@ export function PremiumModal({
           <X className="h-4 w-4" aria-hidden="true" />
         </button>
 
-        <div className="flex items-center gap-2 text-[#FDBE11]">
+        <div className="flex items-center gap-2 text-[#FF5E00]">
           <Crown className="h-5 w-5" aria-hidden="true" />
           <span className="text-xs font-bold uppercase tracking-wider">UWatch Singapore</span>
         </div>
@@ -104,7 +104,7 @@ export function PremiumModal({
             onClick={() => setBilling('annual')}
             className={`rounded-md py-2 text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
               billing === 'annual'
-                ? 'bg-[#FDBE11] text-[#111113]'
+                ? 'bg-[#FF5E00] text-[#111113]'
                 : 'text-[#A1A1AA] hover:text-white'
             }`}
           >
@@ -122,7 +122,7 @@ export function PremiumModal({
               Cancel anytime · Includes 4 concurrent screens
             </p>
           </div>
-          <p className="font-display text-2xl font-bold text-[#FDBE11] tabular-nums shrink-0">
+          <p className="font-display text-2xl font-bold text-[#FF5E00] tabular-nums shrink-0">
             {billing === 'annual' ? 'S$69.98' : 'S$8.98'}
           </p>
         </div>
@@ -131,7 +131,7 @@ export function PremiumModal({
         <ul className="mt-5 space-y-2.5">
           {BENEFITS.map((item) => (
             <li key={item} className="flex items-start gap-2.5 text-sm text-[#E4E4E7]">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#FDBE11]" aria-hidden="true" />
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#FF5E00]" aria-hidden="true" />
               <span>{item}</span>
             </li>
           ))}
@@ -145,7 +145,7 @@ export function PremiumModal({
             onChange={(e) => setPromoCode(e.target.value)}
             placeholder="Redeem promo code (try UWATCH30)"
             aria-label="Redeem UWatch promo code"
-            className="flex-1 rounded-md border border-white/10 bg-[#111113] px-3 py-2 text-sm text-white placeholder-[#71717A] focus:border-[#FDBE11] focus:outline-none"
+            className="flex-1 rounded-md border border-white/10 bg-[#111113] px-3 py-2 text-sm text-white placeholder-[#71717A] focus:border-[#FF5E00] focus:outline-none"
           />
           <button
             type="submit"
@@ -155,7 +155,7 @@ export function PremiumModal({
           </button>
         </form>
         {promoMessage && (
-          <p className="mt-2 text-xs text-[#FDBE11]">{promoMessage}</p>
+          <p className="mt-2 text-xs text-[#FF5E00]">{promoMessage}</p>
         )}
 
         {/* Primary Action */}
@@ -173,7 +173,7 @@ export function PremiumModal({
               onActivatePremium();
               onClose();
             }}
-            className="rounded-md bg-[#FDBE11] px-5 py-2.5 text-sm font-bold text-[#111113] hover:bg-[#FFD043] transition-colors cursor-pointer"
+            className="rounded-md bg-[#FF5E00] px-5 py-2.5 text-sm font-bold text-[#111113] hover:bg-[#FF7A26] transition-colors cursor-pointer"
           >
             {isPremiumMember ? 'Premium Active' : 'Activate Premium Preview'}
           </button>

@@ -55,7 +55,7 @@ export function PremiumHighlights({
     >
       <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
-          <p className="text-xs sm:text-sm font-semibold text-[#FDBE11]">
+          <p className="text-xs sm:text-sm font-semibold text-[#FF5E00]">
             UWatch Premium Membership
           </p>
           <h2
@@ -73,7 +73,7 @@ export function PremiumHighlights({
         <button
           type="button"
           onClick={onOpenPremium}
-          className="inline-flex items-center gap-2 self-start rounded-md bg-[#FDBE11] px-5 py-2.5 text-sm font-bold text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer md:self-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+          className="inline-flex items-center gap-2 self-start rounded-md bg-[#FF5E00] px-5 py-2.5 text-sm font-bold text-[#111113] transition-colors duration-150 hover:bg-[#FF7A26] whitespace-nowrap shrink-0 cursor-pointer md:self-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
         >
           <span>{isPremiumMember ? 'Manage UWatch Premium' : 'Compare Paid Plans'}</span>
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -86,10 +86,10 @@ export function PremiumHighlights({
           return (
             <div
               key={feature.index}
-              className="flex flex-col justify-between rounded-xl border border-white/[0.08] bg-[#161619] p-5 transition-colors duration-150 hover:border-[#FDBE11]/35"
+              className="flex flex-col justify-between rounded-xl border border-white/[0.08] bg-[#161619] p-5 transition-colors duration-150 hover:border-[#FF5E00]/35"
             >
               <div className="flex items-center justify-between gap-3">
-                <span className="font-display text-sm font-bold text-[#FDBE11] tabular-nums">
+                <span className="font-display text-sm font-bold text-[#FF5E00] tabular-nums">
                   {feature.index}.
                 </span>
                 <Icon className="h-4 w-4 text-[#A1A1AA]" aria-hidden="true" />

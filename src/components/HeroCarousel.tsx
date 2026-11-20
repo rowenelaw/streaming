@@ -80,7 +80,7 @@ export function HeroCarousel({
         {/* Editorial Hero Content Overlay */}
         <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col justify-end px-4 pb-12 sm:px-8 sm:pb-14">
           <div className="max-w-2xl">
-            <p className="mb-2 text-xs sm:text-sm font-semibold tracking-wide text-[#FDBE11]">
+            <p className="mb-2 text-xs sm:text-sm font-semibold tracking-wide text-[#FF5E00]">
               {current.isOriginal ? 'UWatch Original' : current.category}
               {current.simulcastNote ? ` · ${current.simulcastNote}` : ''}
             </p>
@@ -107,7 +107,7 @@ export function HeroCarousel({
               <button
                 type="button"
                 onClick={onSignInClick}
-                className="animate-uwatch-flash inline-flex items-center gap-2 rounded-md bg-[#FDBE11] px-6 py-3 text-sm sm:text-base font-extrabold tracking-wide text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                className="animate-uwatch-flash inline-flex items-center gap-2 rounded-md bg-[#FF5E00] px-6 py-3 text-sm sm:text-base font-extrabold tracking-wide text-[#111113] transition-colors duration-150 hover:bg-[#FF7A26] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
               >
                 <LogIn className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
                 <span>{signedInEmail ? 'Signed In' : 'Sign In to Watch'}</span>
@@ -116,10 +116,10 @@ export function HeroCarousel({
               <button
                 type="button"
                 onClick={() => onToggleMyList(current.id)}
-                className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-[#1A1A1E]/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-[#232329] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-[#1A1A1E]/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-[#232329] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
               >
                 {isSaved ? (
-                  <Check className="h-4 w-4 text-[#FDBE11]" aria-hidden="true" />
+                  <Check className="h-4 w-4 text-[#FF5E00]" aria-hidden="true" />
                 ) : (
                   <Bookmark className="h-4 w-4" aria-hidden="true" />
                 )}
@@ -129,7 +129,7 @@ export function HeroCarousel({
               <button
                 type="button"
                 onClick={() => onSelectShow(current)}
-                className="inline-flex items-center gap-1.5 rounded-md px-3.5 py-2.5 text-sm font-medium text-[#D4D4D8] transition-colors duration-150 hover:text-white hover:bg-white/10 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                className="inline-flex items-center gap-1.5 rounded-md px-3.5 py-2.5 text-sm font-medium text-[#D4D4D8] transition-colors duration-150 hover:text-white hover:bg-white/10 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
               >
                 <Info className="h-4 w-4" aria-hidden="true" />
                 <span>Details</span>
@@ -148,9 +148,9 @@ export function HeroCarousel({
                   aria-selected={idx === activeIndex}
                   aria-label={`Show slide ${idx + 1}: ${slide.title}`}
                   onClick={() => setActiveIndex(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11] ${
+                  className={`h-1.5 rounded-full transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00] ${
                     idx === activeIndex
-                      ? 'w-8 bg-[#FDBE11]'
+                      ? 'w-8 bg-[#FF5E00]'
                       : 'w-2.5 bg-white/30 hover:bg-white/60'
                   }`}
                 />
@@ -162,7 +162,7 @@ export function HeroCarousel({
                 type="button"
                 onClick={goPrev}
                 aria-label="Previous featured show"
-                className="flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-[#1A1A1E]/80 text-white transition-colors hover:bg-[#232329] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-[#1A1A1E]/80 text-white transition-colors hover:bg-[#232329] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
               >
                 <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </button>
@@ -170,7 +170,7 @@ export function HeroCarousel({
                 type="button"
                 onClick={goNext}
                 aria-label="Next featured show"
-                className="flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-[#1A1A1E]/80 text-white transition-colors hover:bg-[#232329] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-[#1A1A1E]/80 text-white transition-colors hover:bg-[#232329] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
               >
                 <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </button>

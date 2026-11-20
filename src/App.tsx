@@ -235,7 +235,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => handleSelectNav('Home')}
-                  className="text-xs font-semibold text-[#FDBE11] hover:text-[#FFD043] cursor-pointer"
+                  className="text-xs font-semibold text-[#FF5E00] hover:text-[#FF7A26] cursor-pointer"
                 >
                   Back to Home
                 </button>
@@ -260,7 +260,7 @@ export default function App() {
                     handleResetFilters();
                     setActiveNav('Home');
                   }}
-                  className="mt-5 rounded-md bg-[#FDBE11] px-4 py-2 text-sm font-bold text-[#111113] hover:bg-[#FFD043] cursor-pointer"
+                  className="mt-5 rounded-md bg-[#FF5E00] px-4 py-2 text-sm font-bold text-[#111113] hover:bg-[#FF7A26] cursor-pointer"
                 >
                   Browse Full Catalog
                 </button>

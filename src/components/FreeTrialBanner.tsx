@@ -52,7 +52,7 @@ export function FreeTrialBanner({
       aria-label="Free trial promotion"
       className="mx-auto max-w-[1440px] px-4 pt-4 pb-2 sm:px-8"
     >
-      <div className="animate-uwatch-banner-glow relative overflow-hidden rounded-xl bg-[#FFF3C4] px-6 py-4 sm:px-8 sm:py-5">
+      <div className="animate-uwatch-banner-glow relative overflow-hidden rounded-xl bg-[#FFE6D1] px-6 py-4 sm:px-8 sm:py-5">
         {/* Continuous GPU-composited golden sheen sweep */}
         <div
           aria-hidden="true"
@@ -74,11 +74,11 @@ export function FreeTrialBanner({
               aria-label={`Offer ends in ${formatCountdown(secondsLeft)}`}
               className="inline-flex w-fit shrink-0 items-center gap-2 rounded-lg bg-[#1F2126] px-3.5 py-2.5 text-white"
             >
-              <Clock className="h-4 w-4 text-[#FDBE11] shrink-0" aria-hidden="true" />
+              <Clock className="h-4 w-4 text-[#FF5E00] shrink-0" aria-hidden="true" />
               <span className="text-xs font-medium text-[#D4D4D8] whitespace-nowrap">
                 Ends in
               </span>
-              <span className="font-mono text-sm sm:text-base font-bold tracking-wider text-[#FDBE11] tabular-nums">
+              <span className="font-mono text-sm sm:text-base font-bold tracking-wider text-[#FF5E00] tabular-nums">
                 {formatCountdown(secondsLeft)}
               </span>
             </div>
@@ -86,9 +86,9 @@ export function FreeTrialBanner({
             <button
               type="button"
               onClick={onGoPremiumClick}
-              className="ml-auto sm:ml-0 inline-flex items-center gap-2 rounded-lg bg-[#111113] px-6 py-3 font-display text-base sm:text-lg font-extrabold tracking-tight text-[#FDBE11] shadow-md transition-colors duration-150 hover:bg-[#232329] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111113]"
+              className="ml-auto sm:ml-0 inline-flex items-center gap-2 rounded-lg bg-[#111113] px-6 py-3 font-display text-base sm:text-lg font-extrabold tracking-tight text-[#FF5E00] shadow-md transition-colors duration-150 hover:bg-[#232329] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111113]"
             >
-              <Crown className="h-5 w-5 text-[#FDBE11]" aria-hidden="true" />
+              <Crown className="h-5 w-5 text-[#FF5E00]" aria-hidden="true" />
               <span>{isPremiumMember ? 'UWatch Premium' : 'Go Premium'}</span>
             </button>
           </div>

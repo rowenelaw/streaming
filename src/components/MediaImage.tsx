@@ -18,7 +18,7 @@ export function MediaImage({ src, alt, className = '', fallbackTitle }: MediaIma
         role="img"
         aria-label={alt}
       >
-        <Film className="h-7 w-7 text-[#FDBE11]/70 mb-2" aria-hidden="true" />
+        <Film className="h-7 w-7 text-[#FF5E00]/70 mb-2" aria-hidden="true" />
         {fallbackTitle && (
           <span className="text-xs font-medium text-[#D4D4D8] line-clamp-2 max-w-[14ch]">
             {fallbackTitle}

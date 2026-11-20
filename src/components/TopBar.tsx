@@ -46,7 +46,7 @@ export function TopBar({
                 key={item}
                 type="button"
                 onClick={() => onSelectNav(item)}
-                className={`relative py-5 transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11] ${
+                className={`relative py-5 transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00] ${
                   isActive
                     ? 'text-white font-semibold'
                     : 'text-[#A1A1AA] hover:text-white'
@@ -56,7 +56,7 @@ export function TopBar({
                 {isActive && (
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-[2px] bg-[#FDBE11]"
+                    className="absolute inset-x-0 bottom-0 h-[2px] bg-[#FF5E00]"
                   />
                 )}
               </button>
@@ -69,10 +69,10 @@ export function TopBar({
           <button
             type="button"
             onClick={onOpenPremium}
-            className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11] ${
+            className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00] ${
               isPremiumMember
-                ? 'bg-[#232329] text-[#FDBE11] border border-[#FDBE11]/40 hover:bg-[#2B2B33]'
-                : 'bg-[#FDBE11] text-[#111113] hover:bg-[#FFD043]'
+                ? 'bg-[#232329] text-[#FF5E00] border border-[#FF5E00]/40 hover:bg-[#2B2B33]'
+                : 'bg-[#FF5E00] text-[#111113] hover:bg-[#FF7A26]'
             }`}
           >
             {isPremiumMember ? 'UWatch Premium' : 'Go Premium'}
@@ -95,7 +95,7 @@ export function TopBar({
               type="button"
               onClick={() => onSelectNav(item)}
               className={`py-1 whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
-                isActive ? 'text-[#FDBE11] font-semibold' : 'text-[#A1A1AA]'
+                isActive ? 'text-[#FF5E00] font-semibold' : 'text-[#A1A1AA]'
               }`}
             >
               {label}
