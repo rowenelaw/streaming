@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { HeroCarousel } from './components/HeroCarousel';
 import { PremiumModal } from './components/PremiumModal';
 import { ShowDetailModal } from './components/ShowDetailModal';
+import { SignInModal } from './components/SignInModal';
 import { NavTab, TopBar } from './components/TopBar';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { Episode, HERO_SLIDE_IDS, SHOW_CATALOG, Show } from './data/catalog';
@@ -30,6 +31,8 @@ export default function App() {
   const [playerState, setPlayerState] = useState<{ show: Show; episode: Episode } | null>(null);
   const [isPremiumOpen, setIsPremiumOpen] = useState(false);
   const [isPremiumMember, setIsPremiumMember] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [signedInEmail, setSignedInEmail] = useState<string | null>(null);
 
   const heroSlides = useMemo(
     () =>
@@ -189,7 +192,8 @@ export default function App() {
           <HeroCarousel
             slides={heroSlides}
             myListIds={myListIds}
-            onPlayShow={(show) => handlePlayShow(show, 1)}
+            signedInEmail={signedInEmail}
+            onSignInClick={() => setIsSignInOpen(true)}
             onSelectShow={setSelectedShow}
             onToggleMyList={toggleMyList}
           />
@@ -388,6 +392,14 @@ export default function App() {
         isPremiumMember={isPremiumMember}
         onClose={() => setIsPremiumOpen(false)}
         onActivatePremium={() => setIsPremiumMember(true)}
+      />
+
+      <SignInModal
+        isOpen={isSignInOpen}
+        signedInEmail={signedInEmail}
+        onClose={() => setIsSignInOpen(false)}
+        onSignIn={(email) => setSignedInEmail(email)}
+        onSignOut={() => setSignedInEmail(null)}
       />
     </div>
   );

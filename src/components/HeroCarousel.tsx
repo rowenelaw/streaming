@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Bookmark, Check, ChevronLeft, ChevronRight, Info, Play } from 'lucide-react';
+import { Bookmark, Check, ChevronLeft, ChevronRight, Info, LogIn } from 'lucide-react';
 import { Show } from '../data/catalog';
 import { MediaImage } from './MediaImage';
 
 interface HeroCarouselProps {
   slides: Show[];
   myListIds: string[];
-  onPlayShow: (show: Show) => void;
+  signedInEmail: string | null;
+  onSignInClick: () => void;
   onSelectShow: (show: Show) => void;
   onToggleMyList: (showId: string) => void;
 }
@@ -14,7 +15,8 @@ interface HeroCarouselProps {
 export function HeroCarousel({
   slides,
   myListIds,
-  onPlayShow,
+  signedInEmail,
+  onSignInClick,
   onSelectShow,
   onToggleMyList,
 }: HeroCarouselProps) {
@@ -104,11 +106,11 @@ export function HeroCarousel({
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <button
                 type="button"
-                onClick={() => onPlayShow(current)}
-                className="inline-flex items-center gap-2 rounded-md bg-[#FDBE11] px-5 py-2.5 text-sm font-bold text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
+                onClick={onSignInClick}
+                className="animate-viu-flash inline-flex items-center gap-2 rounded-md bg-[#FDBE11] px-6 py-3 text-sm sm:text-base font-extrabold tracking-wide text-[#111113] transition-colors duration-150 hover:bg-[#FFD043] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FDBE11]"
               >
-                <Play className="h-4 w-4 fill-current" aria-hidden="true" />
-                <span>Watch Ep 1</span>
+                <LogIn className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
+                <span>{signedInEmail ? 'Signed In' : 'Sign In to Watch'}</span>
               </button>
 
               <button
