@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { ContentRail } from './components/ContentRail';
 import { DiscoveryBar, RegionFilter, SubtitleFilter } from './components/DiscoveryBar';
 import { Footer } from './components/Footer';
+import { FreeTrialBanner } from './components/FreeTrialBanner';
 import { HeroCarousel } from './components/HeroCarousel';
 import { PremiumHighlights } from './components/PremiumHighlights';
 import { PremiumModal } from './components/PremiumModal';
@@ -33,6 +34,7 @@ export default function App() {
   const [isPremiumOpen, setIsPremiumOpen] = useState(false);
   const [isPremiumMember, setIsPremiumMember] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const [signedInEmail, setSignedInEmail] = useState<string | null>(null);
 
   const heroSlides = useMemo(
@@ -184,12 +186,22 @@ export default function App() {
       />
 
       <main className="flex-1">
+        {!signedInEmail && (
+          <FreeTrialBanner
+            isPremiumMember={isPremiumMember}
+            onGoPremiumClick={() => setIsPremiumOpen(true)}
+          />
+        )}
+
         {activeNav === 'Home' && !hasActiveFilters && (
           <HeroCarousel
             slides={heroSlides}
             myListIds={myListIds}
             signedInEmail={signedInEmail}
-            onSignInClick={() => setIsSignInOpen(true)}
+            onSignInClick={() => {
+              setAuthMode('signin');
+              setIsSignInOpen(true);
+            }}
             onSelectShow={setSelectedShow}
             onToggleMyList={toggleMyList}
           />
@@ -384,6 +396,7 @@ export default function App() {
 
       <SignInModal
         isOpen={isSignInOpen}
+        mode={authMode}
         signedInEmail={signedInEmail}
         onClose={() => setIsSignInOpen(false)}
         onSignIn={(email) => setSignedInEmail(email)}

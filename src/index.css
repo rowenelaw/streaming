@@ -49,6 +49,63 @@
   animation: viu-flash 0.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+@keyframes viu-banner-sheen {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  55%, 100% {
+    transform: translateX(260%) skewX(-18deg);
+  }
+}
+
+@keyframes viu-banner-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(253, 190, 17, 0.35), 0 6px 20px -4px rgba(253, 190, 17, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(253, 190, 17, 0.8), 0 10px 28px -2px rgba(253, 190, 17, 0.45);
+  }
+}
+
+@keyframes viu-banner-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-viu-banner-sheen {
+  animation: viu-banner-sheen 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-viu-banner-glow {
+  animation: viu-banner-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    viu-banner-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes viu-adfree-flash {
+  0%, 100% {
+    opacity: 1;
+    color: #F04E00;
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(240, 78, 0, 0.45);
+  }
+  50% {
+    opacity: 0.35;
+    color: #FF7300;
+    transform: scale(1.04);
+    text-shadow: 0 0 18px rgba(255, 115, 0, 0.85);
+  }
+}
+
+.animate-viu-adfree-flash {
+  animation: viu-adfree-flash 0.85s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

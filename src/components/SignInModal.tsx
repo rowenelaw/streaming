@@ -3,6 +3,7 @@ import { LogIn, X } from 'lucide-react';
 
 interface SignInModalProps {
   isOpen: boolean;
+  mode?: 'signin' | 'signup';
   signedInEmail: string | null;
   onClose: () => void;
   onSignIn: (email: string) => void;
@@ -11,6 +12,7 @@ interface SignInModalProps {
 
 export function SignInModal({
   isOpen,
+  mode = 'signin',
   signedInEmail,
   onClose,
   onSignIn,
@@ -110,10 +112,14 @@ export function SignInModal({
               id="signin-modal-title"
               className="font-display text-2xl font-bold text-white"
             >
-              Sign in to Viu Singapore
+              {mode === 'signup'
+                ? 'Start your ad-free drama trial'
+                : 'Sign in to Viu Singapore'}
             </h2>
             <p className="mt-1 text-sm text-[#A1A1AA]">
-              Sync your watchlist, watch history, and subtitles across devices.
+              {mode === 'signup'
+                ? 'Create your Viu account to unlock your first ad-free drama in Full HD.'
+                : 'Sync your watchlist, watch history, and subtitles across devices.'}
             </p>
 
             <div className="mt-5 space-y-4">
@@ -162,7 +168,7 @@ export function SignInModal({
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#FDBE11] px-5 py-2.5 text-sm font-extrabold text-[#111113] hover:bg-[#FFD043] transition-colors cursor-pointer"
             >
               <LogIn className="h-4 w-4" aria-hidden="true" />
-              <span>Sign In</span>
+              <span>{mode === 'signup' ? 'Sign Up & Claim Free Trial' : 'Sign In'}</span>
             </button>
           </form>
         )}
