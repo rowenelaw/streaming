@@ -110,7 +110,7 @@ export function HeroCarousel({
                 className="animate-uwatch-flash inline-flex items-center gap-2 rounded-md bg-[#FF5E00] px-6 py-3 text-sm sm:text-base font-extrabold tracking-wide text-[#111113] transition-colors duration-150 hover:bg-[#FF7A26] whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF5E00]"
               >
                 <LogIn className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
-                <span>{signedInEmail ? 'Signed In' : 'Sign In to Watch'}</span>
+                <span>{signedInEmail ? 'Signed In' : 'Sign Up to Watch'}</span>
               </button>
 
               <button

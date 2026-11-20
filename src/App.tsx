@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ConsentNotice } from './components/ConsentNotice';
 import { ContentRail } from './components/ContentRail';
 import { DiscoveryBar, RegionFilter, SubtitleFilter } from './components/DiscoveryBar';
 import { Footer } from './components/Footer';
@@ -11,6 +12,7 @@ import { SignInModal } from './components/SignInModal';
 import { NavTab, TopBar } from './components/TopBar';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { Episode, HERO_SLIDE_IDS, SHOW_CATALOG, Show } from './data/catalog';
+import { variant, track, consent, setConsent, loadClarity } from './pt';
 
 export default function App() {
   const [activeNav, setActiveNav] = useState<NavTab>('Home');
@@ -34,8 +36,23 @@ export default function App() {
   const [isPremiumOpen, setIsPremiumOpen] = useState(false);
   const [isPremiumMember, setIsPremiumMember] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signup');
   const [signedInEmail, setSignedInEmail] = useState<string | null>(null);
+
+  const [activeVariant] = useState(() => variant());
+  const [consentChoice, setConsentChoice] = useState<'granted' | 'denied' | null>(() =>
+    consent()
+  );
+  const didTrackViewRef = useRef(false);
+
+  useEffect(() => {
+    if (didTrackViewRef.current) return;
+    didTrackViewRef.current = true;
+    if (consent() === 'granted') {
+      loadClarity();
+    }
+    track('screen_view');
+  }, []);
 
   const heroSlides = useMemo(
     () =>
@@ -186,7 +203,7 @@ export default function App() {
       />
 
       <main className="flex-1">
-        {!signedInEmail && (
+        {activeVariant === 'B' && !signedInEmail && (
           <FreeTrialBanner
             isPremiumMember={isPremiumMember}
             onGoPremiumClick={() => setIsPremiumOpen(true)}
@@ -199,7 +216,8 @@ export default function App() {
             myListIds={myListIds}
             signedInEmail={signedInEmail}
             onSignInClick={() => {
-              setAuthMode('signin');
+              track('cta_click');
+              setAuthMode('signup');
               setIsSignInOpen(true);
             }}
             onSelectShow={setSelectedShow}
@@ -399,9 +417,27 @@ export default function App() {
         mode={authMode}
         signedInEmail={signedInEmail}
         onClose={() => setIsSignInOpen(false)}
-        onSignIn={(email) => setSignedInEmail(email)}
+        onSignIn={(email, submittedMode) => {
+          setSignedInEmail(email);
+          if (submittedMode === 'signup') {
+            track('goal_complete');
+          }
+        }}
         onSignOut={() => setSignedInEmail(null)}
       />
+
+      {consentChoice === null && (
+        <ConsentNotice
+          onAccept={() => {
+            setConsent('granted');
+            setConsentChoice('granted');
+          }}
+          onDecline={() => {
+            setConsent('denied');
+            setConsentChoice('denied');
+          }}
+        />
+      )}
     </div>
   );
 }

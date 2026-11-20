@@ -7,21 +7,29 @@ interface SignInModalProps {
   mode?: 'signin' | 'signup';
   signedInEmail: string | null;
   onClose: () => void;
-  onSignIn: (email: string) => void;
+  onSignIn: (email: string, mode: 'signin' | 'signup') => void;
   onSignOut: () => void;
 }
 
 export function SignInModal({
   isOpen,
-  mode = 'signin',
+  mode = 'signup',
   signedInEmail,
   onClose,
   onSignIn,
   onSignOut,
 }: SignInModalProps) {
+  const [activeMode, setActiveMode] = useState<'signin' | 'signup'>(mode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setActiveMode(mode);
+      setError(null);
+    }
+  }, [isOpen, mode]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -46,7 +54,7 @@ export function SignInModal({
       return;
     }
     setError(null);
-    onSignIn(trimmed);
+    onSignIn(trimmed, activeMode);
     setPassword('');
     onClose();
   };
@@ -66,7 +74,7 @@ export function SignInModal({
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close sign in dialog"
+          aria-label="Close sign up dialog"
           className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white hover:bg-[#232329] cursor-pointer"
         >
           <X className="h-4 w-4" aria-hidden="true" />
@@ -111,13 +119,13 @@ export function SignInModal({
               id="signin-modal-title"
               className="font-display text-2xl font-bold text-white"
             >
-              {mode === 'signup'
-                ? 'Start your ad-free drama trial'
+              {activeMode === 'signup'
+                ? 'Sign up for UWatch Singapore'
                 : 'Sign in to UWatch Singapore'}
             </h2>
             <p className="mt-1 text-sm text-[#A1A1AA]">
-              {mode === 'signup'
-                ? 'Create your UWatch account to unlock your first ad-free drama in Full HD.'
+              {activeMode === 'signup'
+                ? 'Create your UWatch account to start streaming dramas and variety in Full HD.'
                 : 'Sync your watchlist, watch history, and subtitles across devices.'}
             </p>
 
@@ -167,8 +175,22 @@ export function SignInModal({
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#FF5E00] px-5 py-2.5 text-sm font-extrabold text-[#111113] hover:bg-[#FF7A26] transition-colors cursor-pointer"
             >
               <LogIn className="h-4 w-4" aria-hidden="true" />
-              <span>{mode === 'signup' ? 'Sign Up & Claim Free Trial' : 'Sign In'}</span>
+              <span>{activeMode === 'signup' ? 'Sign Up' : 'Sign In'}</span>
             </button>
+
+            <p className="mt-4 text-center text-xs text-[#A1A1AA]">
+              {activeMode === 'signup' ? 'Already have an account? ' : 'New to UWatch? '}
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveMode(activeMode === 'signup' ? 'signin' : 'signup');
+                  setError(null);
+                }}
+                className="font-semibold text-[#FF5E00] hover:text-[#FF7A26] cursor-pointer"
+              >
+                {activeMode === 'signup' ? 'Sign In' : 'Sign Up'}
+              </button>
+            </p>
           </form>
         )}
       </div>
