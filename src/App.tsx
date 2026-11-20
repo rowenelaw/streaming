@@ -3,6 +3,7 @@ import { ContentRail } from './components/ContentRail';
 import { DiscoveryBar, RegionFilter, SubtitleFilter } from './components/DiscoveryBar';
 import { Footer } from './components/Footer';
 import { HeroCarousel } from './components/HeroCarousel';
+import { PremiumHighlights } from './components/PremiumHighlights';
 import { PremiumModal } from './components/PremiumModal';
 import { ShowDetailModal } from './components/ShowDetailModal';
 import { SignInModal } from './components/SignInModal';
@@ -139,11 +140,6 @@ export default function App() {
     });
   }, [activeNav, myListIds, regionFilter, subtitleFilter, searchQuery]);
 
-  const continueWatchingShows = useMemo(
-    () => SHOW_CATALOG.filter((s) => Boolean(progressMap[s.id])),
-    [progressMap]
-  );
-
   const top10Shows = useMemo(
     () =>
       SHOW_CATALOG.filter((s) => typeof s.topRank === 'number').sort(
@@ -273,17 +269,9 @@ export default function App() {
           </section>
         ) : (
           <div className="pb-6">
-            <ContentRail
-              id="continue-watching"
-              title="Continue Watching"
-              subtitle="Pick up right where you left off"
-              shows={continueWatchingShows}
-              variant="episode"
-              myListIds={myListIds}
-              progressMap={progressMap}
-              onSelectShow={setSelectedShow}
-              onPlayShow={handlePlayShow}
-              onToggleMyList={toggleMyList}
+            <PremiumHighlights
+              isPremiumMember={isPremiumMember}
+              onOpenPremium={() => setIsPremiumOpen(true)}
             />
 
             <ContentRail
